@@ -24,7 +24,8 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.JsonFormatter;
-
+String environment = System.getenv("ENVIRONMENT");
+System.out.println("Environment from HyperExecute: " + environment);
 public class Test2 {
     WebDriver driver = null;
     public static String status = "passed";
