@@ -29,8 +29,7 @@ import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.JsonFormatter;
-String environment = System.getenv("ENVIRONMENT");
-System.out.println("Environment from HyperExecute: " + environment);
+
 public class Test1 {
     RemoteWebDriver driver = null;
     public static String status = "passed";

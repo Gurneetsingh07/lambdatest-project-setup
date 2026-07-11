@@ -18,14 +18,12 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-
+import org.testng.Assert;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.JsonFormatter;
-String environment = System.getenv("ENVIRONMENT");
-System.out.println("Environment from HyperExecute: " + environment);
 public class Test2 {
     WebDriver driver = null;
     public static String status = "passed";
@@ -99,7 +97,8 @@ public class Test2 {
 
         driver.get(testURL);
         Thread.sleep(5000);
-
+        String environment = System.getenv("ENVIRONMENT");
+        System.out.println("Environment from HyperExecute: " + environment);
         test1.log(Status.PASS, "URL is opened");
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         test1.log(Status.PASS, "Wait created");
@@ -143,7 +142,7 @@ public class Test2 {
         }
 
         extent.flush();
-
+        Assert.fail("Intentional failure for HyperExecute retry demonstration");
         /* Once you are outside this code, the list would be empty */
     }
 
